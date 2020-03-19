@@ -1285,15 +1285,24 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   android_version = target_info.GetBuildProp("ro.build.version.release")
   build_id = target_info.GetBuildProp("ro.build.id")
-  build_date = target_info.GetBuildProp("org.pixelexperience.build_date")
+  cherish_version = target_info.GetBuildProp("ro.cherish.version")
+  build_date = target_info.GetBuildProp("ro.cherish.build_date")
   security_patch = target_info.GetBuildProp("ro.build.version.security_patch")
-  device = target_info.GetBuildProp("org.pixelexperience.device")
+  device = target_info.GetBuildProp("ro.cherish.device")
 
-  script.Print("----------------------------------------------");
-  script.Print("              Pixel Experience");
-  script.Print("               by jhenrique09");
-  script.Print("----------------------------------------------");
+  script.Print("---------------------------------------------------");
+  script.Print("     __                         __      __         ");
+  script.Print("   / ____| |             (_)   | |    / __ \       ");
+  script.Print("  | |    | |__   ___ _ __ _ ___| |__ | \  / |___   ");
+  script.Print("  | |    | '_ \ / _ \ '__| / __| '_ \| |  | / __|  ");
+  script.Print("  | |____| | | |  __/ |  | \__ \ | | | /__\ \__ \  ");
+  script.Print("   \_____|_| |_|\___|_|  |_|___/_| |_|\____/|___/  ");
+  script.Print("                                                   ");
+  script.Print("                     CherishOS                     ");
+  script.Print("                  by hungphan2001                  ");
+  script.Print("---------------------------------------------------");
   script.Print(" Android version: %s"%(android_version));
+  script.Print(" Cherish version: %s"%(cherish_version));
   script.Print(" Build id: %s"%(build_id));
   script.Print(" Build date: %s"%(build_date));
   script.Print(" Security patch: %s"%(security_patch));
@@ -2061,21 +2070,28 @@ else if get_stage("%(bcb_dev)s") != "3/3" then
   script.Print("Target: {}".format(target_info.fingerprint))
 
   android_version = target_info.GetBuildProp("ro.build.version.release")
-  device = target_info.GetBuildProp("org.pixelexperience.device")
+  device = target_info.GetBuildProp("ro.cherish.device")
 
   prev_build_id = source_info.GetBuildProp("ro.build.id")
   build_id = target_info.GetBuildProp("ro.build.id")
 
-  prev_build_date = source_info.GetBuildProp("org.pixelexperience.build_date")
-  build_date = target_info.GetBuildProp("org.pixelexperience.build_date")
+  prev_build_date = source_info.GetBuildProp("ro.cherish.build_date")
+  build_date = target_info.GetBuildProp("ro.cherish.build_date")
 
   prev_security_patch = source_info.GetBuildProp("ro.build.version.security_patch")
   security_patch = target_info.GetBuildProp("ro.build.version.security_patch")
 
-  script.Print("----------------------------------------------");
-  script.Print("              Pixel Experience");
-  script.Print("               by jhenrique09");
-  script.Print("----------------------------------------------");
+  script.Print("---------------------------------------------------");
+  script.Print("     __                         __      __         ");
+  script.Print("   / ____| |             (_)   | |    / __ \       ");
+  script.Print("  | |    | |__   ___ _ __ _ ___| |__ | \  / |___   ");
+  script.Print("  | |    | '_ \ / _ \ '__| / __| '_ \| |  | / __|  ");
+  script.Print("  | |____| | | |  __/ |  | \__ \ | | | /__\ \__ \  ");
+  script.Print("   \_____|_| |_|\___|_|  |_|___/_| |_|\____/|___/  ");
+  script.Print("                                                   ");
+  script.Print("                     CherishOS                     ");
+  script.Print("                  by hungphan2001                  ");
+  script.Print("---------------------------------------------------");
   script.Print(" Android version: %s"%(android_version));
   if prev_build_id != build_id:
     script.Print(" Build id: %s -> %s"%(prev_build_id, build_id));
@@ -2599,21 +2615,28 @@ def WriteIncrementalOTAPackage(target_zip, source_zip, output_file):
   device_specific.IncrementalOTA_Assertions()
 
   android_version = target_info.GetBuildProp("ro.build.version.release")
-  device = target_info.GetBuildProp("org.pixelexperience.device")
+  device = target_info.GetBuildProp("ro.cherish.device")
 
   prev_build_id = source_info.GetBuildProp("ro.build.id")
   build_id = target_info.GetBuildProp("ro.build.id")
 
-  prev_build_date = source_info.GetBuildProp("org.pixelexperience.build_date")
-  build_date = target_info.GetBuildProp("org.pixelexperience.build_date")
+  prev_build_date = source_info.GetBuildProp("ro.cherish.build_date")
+  build_date = target_info.GetBuildProp("ro.cherish.build_date")
 
   prev_security_patch = source_info.GetBuildProp("ro.build.version.security_patch")
   security_patch = target_info.GetBuildProp("ro.build.version.security_patch")
 
-  script.Print("----------------------------------------------");
-  script.Print("              Pixel Experience");
-  script.Print("               by jhenrique09");
-  script.Print("----------------------------------------------");
+  script.Print("---------------------------------------------------");
+  script.Print("     __                         __      __         ");
+  script.Print("   / ____| |             (_)   | |    / __ \       ");
+  script.Print("  | |    | |__   ___ _ __ _ ___| |__ | \  / |___   ");
+  script.Print("  | |    | '_ \ / _ \ '__| / __| '_ \| |  | / __|  ");
+  script.Print("  | |____| | | |  __/ |  | \__ \ | | | /__\ \__ \  ");
+  script.Print("   \_____|_| |_|\___|_|  |_|___/_| |_|\____/|___/  ");
+  script.Print("                                                   ");
+  script.Print("                     CherishOS                     ");
+  script.Print("                  by hungphan2001                  ");
+  script.Print("---------------------------------------------------");
   script.Print(" Android version: %s"%(android_version));
   if prev_build_id != build_id:
     script.Print(" Build id: %s -> %s"%(prev_build_id, build_id));
@@ -2653,11 +2676,11 @@ def WriteIncrementalOTAPackage(target_zip, source_zip, output_file):
     script.CheckAndUnmount("/product")
     script.Mount("/product")
 
-  error_msg = "Failed to apply update, please download full package at https://download.pixelexperience.org/" + device
+  error_msg = "Failed to apply update, please download full package at https://sourceforge.net/projects/cherish-os/files/packages/" + device
 
   prop_path = "/" + GetSystemBasePath() + "/system/build.prop"
 
-  source_version_prop = "org.pixelexperience.version.display"
+  source_version_prop = "ro.cherish.version.display"
 
   source_version = os.path.splitext(os.path.basename(OPTIONS.incremental_source))[0]
 
